@@ -1,0 +1,48 @@
+{
+  "name": "erc",
+  "version": "1.0.0",
+  "description": "editable react component",
+  "main": "index.js",
+  "scripts": {
+    "dev": "hs -p 9002",
+    "bw": "watchify --debug --im examples/label/index.js -o dist/label.index.js",
+    "stylus": "stylus -w -u nib -u jeet --include-css examples/label/index.styl -o dist/label.index.css"
+  },
+  "author": "Wang Qiu <winsonwq@gmail.com> (http://slender-man.github.io/)",
+  "license": "MIT",
+  "dependencies": {
+    "classnames": "^2.2.0",
+    "es6-promise": "^3.0.2",
+    "object-assign": "^4.0.1",
+    "radium": "^0.14.3",
+    "ramda": "^0.18.0",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "rx": "^4.0.6"
+  },
+  "browserify": {
+    "transform": [
+      "babelify",
+      "browserify-shim"
+    ]
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-eslint": "^4.1.3",
+    "babelify": "^6.4.0",
+    "browserify": "^11.2.0",
+    "browserify-shim": "^3.8.10",
+    "eslint": "^1.7.2",
+    "eslint-plugin-react": "^3.6.3",
+    "http-server": "^0.8.5",
+    "jeet": "^6.1.2",
+    "nib": "^1.1.0",
+    "stylus": "^0.52.4",
+    "watchify": "^3.4.0"
+  },
+  "browserify-shim": {
+    "react": "global:React",
+    "react-dom": "global:ReactDOM",
+    "rx": "global:Rx"
+  }
+}

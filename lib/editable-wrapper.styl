@@ -1,0 +1,31 @@
+
+.editable-wrapper {
+  position: relative;
+
+  .editable-wrapper-content {
+    position: absolute;
+
+    &.non-editmode {
+      display: none;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &.editmode {
+      top: 100%;
+      z-index: 10;
+    }
+
+  }
+
+  &:hover .editable-wrapper-content.non-editmode {
+    display: flex;
+    background: rgba(255, 255, 255, .5);
+    border: 1px solid #ccc;
+  }
+
+}
