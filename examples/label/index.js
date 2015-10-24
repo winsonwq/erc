@@ -2,10 +2,11 @@ import ReactDOM from 'react-dom';
 import R from 'ramda';
 
 import Label from '../../lib/label.react';
-import Panel from '../../lib/panel.react';
 
+import M from '../../lib/mixin';
+import Panel from '../../lib/mixins/panel';
 
-class App extends Panel {
+class App extends M(Panel) {
 
   render() {
     return (
