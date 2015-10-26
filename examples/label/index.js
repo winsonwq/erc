@@ -6,24 +6,52 @@ import Label from '../../lib/label.react';
 import M from '../../lib/mixin';
 import Panel from '../../lib/mixins/panel';
 
-class App extends M(Panel) {
+class Header extends M(Panel) {
 
   render() {
+    const { title, content } = this.props.data;
     return (
       <div>
         <Label ref="title" tagName="h1" editable={ true } >
-          hello
+          { title }
         </Label>
         <Label ref="content" tagName="p" editable={ true } className="styled-label">
-          world
+          { content }
         </Label>
       </div>
     );
   }
 }
 
+class App extends M(Panel) {
+
+  render() {
+
+    const { header, description } = this.props.data;
+
+    return (
+      <div>
+        <Header ref="header" data={ header }/>
+        <Label ref="description" tagName="p" editable={ true } >
+          { description }
+        </Label>
+      </div>
+    );
+  }
+
+}
+
 function print(val) {
   console.log(val);
 }
 
-ReactDOM.render(<App onChange={ R.compose(print, R.prop('data')) }/>, document.querySelector('#app'));
+const data = {
+  header: {
+    title: 'hello',
+    content: 'world'
+  },
+
+  description: 'description'
+};
+
+ReactDOM.render(<App data={ data } onChange={ R.compose(print, R.prop('data')) } />, document.querySelector('#app'));
