@@ -2,39 +2,38 @@ import ReactDOM from 'react-dom';
 import R from 'ramda';
 
 import Label from '../../lib/label.react';
+import Panel from '../../lib/panel.react';
+import List from '../../lib/list.react';
 
-import M from '../../lib/mixin';
-import Panel from '../../lib/mixins/panel';
-
-class Header extends M(Panel) {
+class Header extends Panel {
 
   render() {
-    const { title, content } = this.props.data;
     return (
       <div>
-        <Label ref="title" tagName="h1" editable={ true } >
-          { title }
-        </Label>
-        <Label ref="content" tagName="p" editable={ true } className="styled-label">
-          { content }
-        </Label>
+        <Label { ...this.prop('title') } tagName="h1" editable={ true } />
+        <Label { ...this.prop('content') } tagName="p" editable={ true } className="styled-label" />
       </div>
     );
   }
 }
 
-class App extends M(Panel) {
+class SimpleListItem extends Panel {
+  render() {
+    return (
+      <Label { ...this.prop('title') } className="simple-list-item" tagName="div" editable={ true } />
+    );
+  }
+}
+
+
+class App extends Panel {
 
   render() {
-
-    const { header, description } = this.props.data;
-
     return (
       <div>
-        <Header ref="header" data={ header }/>
-        <Label ref="description" tagName="p" editable={ true } >
-          { description }
-        </Label>
+        <Header { ...this.prop('header') } />
+        <Label { ...this.prop('description') } tagName="p" editable={ true } />
+        <List { ...this.prop('listData') } itemTemplate={ SimpleListItem } />
       </div>
     );
   }
@@ -42,7 +41,7 @@ class App extends M(Panel) {
 }
 
 function print(val) {
-  console.log(val);
+  window.console.log(val);
 }
 
 const data = {
@@ -51,7 +50,15 @@ const data = {
     content: 'world'
   },
 
-  description: 'description'
+  description: 'description',
+
+  listData: [
+    { title: 'hello1' },
+    { title: 'hello2' }
+  ]
 };
 
-ReactDOM.render(<App data={ data } onChange={ R.compose(print, R.prop('data')) } />, document.querySelector('#app'));
+ReactDOM.render(
+  <App data={ data } onChange={ R.compose(print, R.prop('data')) } />,
+  document.querySelector('#app')
+);
