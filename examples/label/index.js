@@ -17,7 +17,18 @@ class Header extends Panel {
   }
 }
 
-class SimpleListItem extends Panel {
+class BigItem extends Panel {
+  render() {
+    return (
+      <div className="big-list-item">
+        <Label { ...this.prop('listTitle') } tagName="div" />
+        <List { ...this.prop('listData') } itemTemplate={ ListItem } />
+      </div>
+    );
+  }
+}
+
+class ListItem extends Panel {
   render() {
     return (
       <Label { ...this.prop('title') } className="simple-list-item" tagName="div" />
@@ -33,7 +44,7 @@ class App extends Panel {
       <div className="erc">
         <Header { ...this.prop('header') } />
         <Label { ...this.prop('description') } tagName="p" />
-        <List { ...this.prop('listData') } itemTemplate={ SimpleListItem } />
+        <List { ...this.prop('bigListData') } className="big-list" itemTemplate={ BigItem } />
       </div>
     );
   }
@@ -52,8 +63,23 @@ const data = {
 
   description: 'description',
 
-  listData: [
-    { title: 'hello2' }
+  bigListData: [
+    {
+      listTitle: 'hello',
+      listData: [
+        { title: 'title 1' },
+        { title: 'title 1' },
+        { title: 'title 1' }
+      ]
+    },
+    {
+      listTitle: 'world',
+      listData: [
+        { title: 'title 2' },
+        { title: 'title 2' },
+        { title: 'title 2' }
+      ]
+    }
   ]
 };
 
