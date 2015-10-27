@@ -1,10 +1,30 @@
-.erc .editable-list {
+.erc .erc-list-wrapper {
 
-  position: relative;
-  width: 100%;
+  .erc-list {
+    position: relative;
+  }
 
-  .list-action-bar {
+  .erc-list-item {
+    position: relative;
+
+    &:hover .erc-list-item-action-bar {
+      display: block;
+    }
+  }
+
+  .erc-list-action-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
     text-align: center;
+  }
+
+  .erc-list-item-action-bar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 20;
+    display: none;
   }
 
 }

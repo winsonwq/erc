@@ -53,7 +53,6 @@ const data = {
   description: 'description',
 
   listData: [
-    { title: 'hello1' },
     { title: 'hello2' }
   ]
 };
