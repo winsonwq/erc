@@ -10,8 +10,8 @@ class Header extends Panel {
   render() {
     return (
       <div>
-        <Label { ...this.prop('title') } tagName="h1" editable={ true } />
-        <Label { ...this.prop('content') } tagName="p" editable={ true } className="styled-label" />
+        <Label { ...this.prop('title') } tagName="h1" />
+        <Label { ...this.prop('content') } tagName="p" className="styled-label" />
       </div>
     );
   }
@@ -20,7 +20,7 @@ class Header extends Panel {
 class SimpleListItem extends Panel {
   render() {
     return (
-      <Label { ...this.prop('title') } className="simple-list-item" tagName="div" editable={ true } />
+      <Label { ...this.prop('title') } className="simple-list-item" tagName="div" />
     );
   }
 }
@@ -30,9 +30,9 @@ class App extends Panel {
 
   render() {
     return (
-      <div>
+      <div className="erc">
         <Header { ...this.prop('header') } />
-        <Label { ...this.prop('description') } tagName="p" editable={ true } />
+        <Label { ...this.prop('description') } tagName="p" />
         <List { ...this.prop('listData') } itemTemplate={ SimpleListItem } />
       </div>
     );
