@@ -3,6 +3,7 @@ import R from 'ramda';
 
 import Paragraph from '../../lib/paragraph/paragraph.react';
 import Img from '../../lib/img/img.react';
+import Link from '../../lib/link/link.react';
 import Panel from '../../lib/panel/panel.react';
 import List from '../../lib/list/list.react';
 
@@ -59,6 +60,7 @@ class App extends Panel {
         <Header { ...this.prop('header') } />
         <Paragraph { ...this.prop('description') } tagName="p" />
         <List { ...this.prop('bigListData') } className="big-list" itemTemplate={ BigItem } itemPlaceholder={ bigItemPlaceholder} />
+        <Link className="styled-btn" { ...this.prop('link') } tagName="span" hrefFieldLabel="链接地址" altFieldLabel="链接说明" textFieldLabel="文本" targetFieldLabel="在新标签页中打开？" />
       </div>
     );
   }
@@ -73,6 +75,12 @@ const data = {
   header: {
     title: 'hello',
     content: 'world'
+  },
+
+  link: {
+    href: 'http://baidu.com',
+    alt: '这是一个链接',
+    text: '这是百度的一个链接'
   },
 
   description: 'description',
