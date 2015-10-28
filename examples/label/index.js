@@ -4,7 +4,7 @@ import R from 'ramda';
 import Label from '../../lib/label.react';
 import Img from '../../lib/img/img.react';
 import Panel from '../../lib/panel.react';
-import List from '../../lib/list.react';
+import List from '../../lib/list/list.react';
 
 class Header extends Panel {
 
