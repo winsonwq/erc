@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "hs -p 9002",
-    "bw": "watchify --debug --im examples/label/index.js -o dist/label.index.js",
-    "stylus": "stylus -w -u nib -u jeet --include-css examples/label/index.styl -o dist/label.index.css"
+    "bw": "watchify --debug --im examples/paragraph/index.js -o dist/paragraph.index.js",
+    "stylus": "stylus -w -u nib -u jeet --include-css examples/paragraph/index.styl -o dist/paragraph.index.css"
   },
   "author": "Wang Qiu <winsonwq@gmail.com> (http://slender-man.github.io/)",
   "license": "MIT",
