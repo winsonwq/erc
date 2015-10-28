@@ -3,7 +3,8 @@
   display: inline-block;
 
   .erc-image-editor {
-    width: 300px;
+    max-width: 300px;
+    min-width: 200px;
 
     .erc-image-preview-wrapper {
       display: flex;
@@ -11,7 +12,7 @@
       align-items: center;
 
       background: darken(#444, 20%);
-      min-height: 200px;
+      min-height: 100px;
       margin-bottom: 10px;
 
       img.erc-image-preview {
