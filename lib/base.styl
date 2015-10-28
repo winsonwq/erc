@@ -1,19 +1,57 @@
 
-.erc .edit-mode-button {
-  border: none;
-  padding: 3px 5px;
-  background: #444;
-  color: white;
-  border-radius: 2px;
-  outline: none;
-  cursor: pointer;
+.erc {
 
-  &:hover {
-    background: lighten(#444, 10%);
+  .edit-mode-button {
+    border: none;
+    padding: 3px 5px;
+    background: #333;
+    color: white;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      background: lighten(#333, 5%);
+    }
+
+    &:active {
+      background: lighten(#333, 10%);
+    }
+
   }
 
-  &:active {
-    background: lighten(#444, 20%);
+  .erc-editor {
+
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+
+      > span {
+        display: block;
+        line-height: 2;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+
+    input,
+    textarea {
+      background: darken(#444, 20%);
+      outline: none;
+      resize: none;
+      color: white;
+      border: none;
+      padding: 2px 3px;
+      line-height: 1.5;
+      width: 100%;
+    }
+
   }
 
 }

@@ -1,4 +1,4 @@
-@import "../../lib/*.styl"
+@import "../../lib/**/*.styl"
 
 * {
   box-sizing: border-box;
@@ -10,10 +10,6 @@ body {
 
 #app {
   padding: 10px;
-
-  p {
-    margin: 0 0 10px 0;
-  }
 }
 
 .simple-list-item {
@@ -30,13 +26,10 @@ body {
   background: gray;
 }
 
-.label-editor {
-  resize: none;
-  padding: 5px;
-  border: 1px solid #ccc;
-  outline: none;
-}
-
 .big-list-item {
   margin-bottom: 100px;
+}
+
+.erc-image {
+  max-width: 100px;
 }

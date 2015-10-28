@@ -2,6 +2,7 @@ import ReactDOM from 'react-dom';
 import R from 'ramda';
 
 import Label from '../../lib/label.react';
+import Img from '../../lib/img/img.react';
 import Panel from '../../lib/panel.react';
 import List from '../../lib/list.react';
 
@@ -22,7 +23,10 @@ class BigItem extends Panel {
     return (
       <div className="big-list-item">
         <Label { ...this.prop('listTitle') } tagName="div" />
-        <List { ...this.prop('listData') } itemTemplate={ ListItem } />
+        <List { ...this.prop('listData') }
+          itemTemplate={ ListItem }
+          itemPlaceholder={ { title: '百度', logo: { src: 'https://www.baidu.com/img/bd_logo1.png' } } }
+          />
       </div>
     );
   }
@@ -31,20 +35,30 @@ class BigItem extends Panel {
 class ListItem extends Panel {
   render() {
     return (
-      <Label { ...this.prop('title') } className="simple-list-item" tagName="div" />
+      <div className="simple-list-item">
+        <Img { ...this.prop('logo') } srcFieldLabel="图片地址" altFieldLabel="图片说明" />
+        <Label { ...this.prop('title') } tagName="div" />
+      </div>
     );
   }
 }
 
-
 class App extends Panel {
 
   render() {
+    const bigItemPlaceholder = {
+      listTitle: '标题',
+      listData: [{
+        title: '子标题',
+        logo: { src: 'https://www.baidu.com/img/bd_logo1.png' }
+      }]
+    };
+
     return (
       <div className="erc">
         <Header { ...this.prop('header') } />
         <Label { ...this.prop('description') } tagName="p" />
-        <List { ...this.prop('bigListData') } className="big-list" itemTemplate={ BigItem } />
+        <List { ...this.prop('bigListData') } className="big-list" itemTemplate={ BigItem } itemPlaceholder={ bigItemPlaceholder} />
       </div>
     );
   }
@@ -67,17 +81,18 @@ const data = {
     {
       listTitle: 'hello',
       listData: [
-        { title: 'title 1' },
-        { title: 'title 1' },
-        { title: 'title 1' }
-      ]
-    },
-    {
-      listTitle: 'world',
-      listData: [
-        { title: 'title 2' },
-        { title: 'title 2' },
-        { title: 'title 2' }
+        {
+          title: 'title 1',
+          logo: {
+            src: 'https://www.baidu.com/img/bd_logo1.png'
+          }
+        },
+        {
+          title: 'title 1',
+          logo: {
+            src: 'https://www.baidu.com/img/bd_logo1.png'
+          }
+        }
       ]
     }
   ]
