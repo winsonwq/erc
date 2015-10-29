@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "hs -p 9002",
-    "bw": "watchify --debug --im examples/paragraph/index.js -o dist/paragraph.index.js",
-    "stylus": "stylus -w -u nib -u jeet --include-css examples/paragraph/index.styl -o dist/paragraph.index.css"
+    "bw": "./scripts/browserify-watch.sh",
+    "stylus": "./scripts/stylus-watch.sh"
   },
   "author": "Wang Qiu <winsonwq@gmail.com> (http://slender-man.github.io/)",
   "license": "MIT",
