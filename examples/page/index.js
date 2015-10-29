@@ -24,6 +24,7 @@ class App extends Panel {
         <Header { ...this.prop('header') } />
         <article>
           <Paragraph { ...this.prop('title') } tagName="h1" />
+          <h2>活动描述</h2>
           <Paragraph { ...this.prop('description') } tagName="section" />
           <div className="action-bar">
             <Link className="styled-btn" { ...this.prop('link') } tagName="span" hrefFieldLabel="链接地址" altFieldLabel="链接说明" textFieldLabel="文本" targetFieldLabel="在新标签页中打开？" />
@@ -31,7 +32,7 @@ class App extends Panel {
           <List { ...this.prop('imageListData') }
             className="image-list"
             itemTemplate={ ImageListItem }
-            itemPlaceholder={ { imageInfo: { src: 'http://placehold.it/800x400' }, imageDesc: '图片说明' } }
+            itemPlaceholder={ { imageInfo: { src: 'http://placehold.it/500x400' }, imageDesc: '图片说明' } }
             />
         </article>
       </div>
