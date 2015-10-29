@@ -86,6 +86,10 @@ const data = {
   ]
 };
 
+function print(val) {
+  window.console.log(val);
+}
+
 ReactDOM.render(
   <App data={ data } onChange={ R.compose(print, R.prop('data')) } />,
   document.querySelector('#app')
