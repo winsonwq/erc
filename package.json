@@ -1,7 +1,7 @@
 {
   "name": "erc",
   "version": "1.0.0",
-  "description": "editable react component",
+  "description": "editable reactive component",
   "main": "index.js",
   "scripts": {
     "dev": "hs -p 9002",
